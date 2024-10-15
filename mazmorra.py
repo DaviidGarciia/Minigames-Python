@@ -63,7 +63,6 @@ while jugar == True:
     if eleccion1 == "pasillo":
         naruto.comerPlatano()
         print("Naruto se ha encontrado un plátano es una esquina, se lo come y le sube la energia y la vida \n")
-        print("El platano te ha dado un total de energia \n")
         print(f" Naruto obtuvo +20 de energia y +15 de vida \n")
         print("""
             _______________________1¶¶¶¶_____________________
