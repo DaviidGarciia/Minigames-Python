@@ -1,5 +1,7 @@
 import tkinter
 import random
+from PIL import Image, ImageTk
+
 class Personaje:
     def __init__(self,vida, energia, velocidad, fuerza):
         self.vida = vida
@@ -38,26 +40,11 @@ ventana = tkinter.Tk()
 ventana.geometry("1400x1400")
 
 etiqueta = tkinter.Label(ventana, text = "Bienvenido a la mazmorra infernal, ayuda a Naruto a buscar su reconocimiento mundial y para ello necesita conseguir seguidores de instagram, su plan es subir un reel desde dentro de la mazmorra con la foto perfecta.")
-imagenPrincipal = tkinter.Label(ventana,text="""
-                ░░░░░░░▄▄▄░░░░░██▄░░░▄██░░░░░░░░░
-                ░░░░░░░░█▀▀█▄▄█▀░▀█▄█▀▀██░░▄▄▄░░░
-                ░░░█▄▄▄▄██░░▀▀▀░░░▀▀░░░███▀▀██░░░
-                ░░░▀█▄░▀▀▀░░░░░░░░░░░░░░░░░██░░░░
-                ░░░▄██░░░░░░░░░░░░░░░░░░░░░▀█▄▄░░
-                ▄████░░░░░░░░░░░░░░░░░░░░░░░▄▄███
-                ░▀▀▀█▀░▄▄███████████████▄▄▄▀█▀░░░
-                ░░░████████░░░░░░░░░░░░███████░░░
-                ░░░▀███████░░░░░░░░░░░░███████▀░░
-                ░░░░███████▄▄▄▄▄▄▄▄▄▄▄▄███████░░░
-                ░░░░▄█▀░░░░░░░░░░░░░░░░░░░░░▀█▄░░
-                ░░░░██░░░░░▀▀▀░░░░░░▀▀▀░░░░██░░░░
-                ░░░░▀█▄░░░▄▄░░░░░░░░░░▄▄░░░▄█░░░░
-                ░░░░░░▀███▀▀░░░░░░░░░░▀▀███▀░░░░░
-                ░░░░░░░▀█▄▄█▀░░▀▀▀▀░░░▀█▄▄█▀░░░░░
-                ░░░░░░░░▀██░▄█░░░░ ░█▄░██▀░░░░░░░
-                ░░░░░░░░░▀▀██▄░░░░░░▄██▀░░░░░░░░░
-                ░░░░░░░░░░░░▀▀██▄▄█▀▀░░░░░░░░░░░░
-    """,padx=40,pady=80)
+imagenPrincipal = Image.open("Narutosaludo.jpg")
+imagen_tk = ImageTk.PhotoImage(imagenPrincipal)
+label = tkinter.Label(ventana, image=imagen_tk)
+ 
+
 vida = tkinter.Label(ventana, text=f"Vida base:{naruto.vida}")
 energia = tkinter.Label(ventana, text=f"Energia base:{naruto.energia}")
 velocidad=tkinter.Label(ventana, text=f"Velocidad base:{naruto.velocidad}")
@@ -70,7 +57,9 @@ def limpiar_ventana():
             widget.destroy()
 def respuesta1A ():
     limpiar_ventana()
+    ventana.mainloop()
     
+
 def respuesta1B ():
     print("sala") 
 
@@ -80,7 +69,7 @@ respuesta1b = tkinter.Button(ventana, bg="red",fg="white",text="Sala",width="4",
 
 etiqueta.pack(side=tkinter.TOP,fill= tkinter.BOTH, expand=True)
 
-imagenPrincipal.pack()
+label.pack(side=tkinter.TOP)
 
 vida.pack(side=tkinter.TOP)
 energia.pack(side=tkinter.TOP)
