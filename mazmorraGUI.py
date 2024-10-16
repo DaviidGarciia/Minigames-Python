@@ -57,9 +57,8 @@ def limpiar_ventana():
             widget.destroy()
 def respuesta1A ():
     limpiar_ventana()
-    ventana.mainloop()
     
-
+    
 def respuesta1B ():
     print("sala") 
 

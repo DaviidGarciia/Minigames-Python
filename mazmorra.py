@@ -306,7 +306,7 @@ while jugar == True:
                         ___¶__________5¶¶¶¶¶¶¶¶5¶¶¶5__5¶5
                         _____________________5¶¶¶5____¶5
         """)
-        fuerzaDragon = random.randint(50,80)
+        fuerzaDragon = random.randint(55,90)
         if naruto.fuerza > fuerzaDragon or naruto.fuerza == fuerzaDragon:
            print("Naruto logró derrotar al Dragón y lo dejó inconsciente gracias a eso logra su objetivo de conseguir seguidores subiendo un selfie con el Dragón abatido !! \n") 
            print("""
