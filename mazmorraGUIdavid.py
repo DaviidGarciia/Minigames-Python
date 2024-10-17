@@ -32,38 +32,35 @@ class Personaje:
         self.fuerza += 15
 
 
-# Inicializar personaje
+
 naruto = Personaje(60, 60, 60, 60)
 
-# Crear la ventana
+
 ventana = tkinter.Tk()
 ventana.geometry("1400x1400")
 ventana.title("Mazmorra Infernal")
 
-# Función para configurar el fondo de la ventana
 def configurar_fondo():
     imagen_fondo = Image.open("mazmorra.jpg")
     imagen_fondo = imagen_fondo.resize((1400, 1400), Image.LANCZOS)
     fondotk = ImageTk.PhotoImage(imagen_fondo)
     label_fondo = tkinter.Label(ventana, image=fondotk)
-    label_fondo.image = fondotk  # Guardar referencia a la imagen
+    label_fondo.image = fondotk  
     label_fondo.place(relwidth=1, relheight=1)
 
-# Configurar el fondo al inicio
-configurar_fondo()
+
+
 def pantallaPrincipal():
-# Crear etiqueta de bienvenida
     limpiar_ventana()
     etiqueta = tkinter.Label(ventana, text="Bienvenido a la mazmorra infernal, ayuda a Naruto a buscar su reconocimiento mundial y para ello necesita conseguir seguidores de Instagram, su plan es subir un reel desde dentro de la mazmorra con la foto perfecta.", bg="grey", fg="white")
     etiqueta.pack(side=tkinter.TOP,pady=150)
 
-# Crear imagen principal
     imagenPrincipal = Image.open("Narutosaludo.jpg")
     imagen_tk = ImageTk.PhotoImage(imagenPrincipal)
     label = tkinter.Label(ventana, image=imagen_tk)
     label.pack(side=tkinter.TOP)
 
-# Crear Labels sin fondo visible
+
     vida = tkinter.Label(ventana, text=f"Vida base: {naruto.vida}", bg="grey", fg="white")
     energia = tkinter.Label(ventana, text=f"Energia base: {naruto.energia}", bg="grey", fg="white")
     velocidad = tkinter.Label(ventana, text=f"Velocidad base: {naruto.velocidad}", bg="grey", fg="white")
@@ -82,13 +79,13 @@ def pantallaPrincipal():
     respuesta1b.pack(side=tkinter.RIGHT)
     ventana.mainloop()
 
-# Función para limpiar la ventana
+
 def limpiar_ventana():
     for widget in ventana.winfo_children():
         widget.destroy()
-    configurar_fondo()  # Volver a configurar el fondo
+    configurar_fondo() 
 
-# Respuestas a las decisiones
+
 def salir():
     ventana.destroy()
 def respuesta1A():
@@ -271,6 +268,6 @@ def respuesta5B():
     
 
 
-# Empaquetar Labels y botones
+configurar_fondo()
 pantallaPrincipal()
 
